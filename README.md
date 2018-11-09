@@ -1,5 +1,7 @@
+# Spring FlashCard Restful API
 
 This is the Spring FlashCard Restful API!
+
 1. Julio Zevallos
 - Christina Dietz
 - Joshua Howard
@@ -14,5 +16,4 @@ This is the Spring FlashCard Restful API!
 - Chuma Okafor
 - Hernan Guardado
 - Agustin Vasquez
-
-
+- David
