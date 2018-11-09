@@ -1,7 +1,21 @@
-# august-classdemo
-This is the Spring FlashCard Restful API
-<<<<<<< HEAD
-Hernan Guardado
-=======
-Christina Dietz
->>>>>>> d3b299e25c63d22682d0bd5e4fd2ad1ad37de285
+# Spring FlashCard Restful API
+
+This is the Spring FlashCard Restful API!
+
+1. Julio Zevallos
+- Christina Dietz
+- Joshua Howard
+- Kevin Zaldivar
+- Jose Contreras
+- Felipe Gomez
+- Jutin Smith
+- Jon Bonin
+- Nathaniel Moss
+- Brian Alvarez
+- JonBonin
+- Chuma Okafor
+- Hernan Guardado
+- Agustin Vasquez
+- David
+- Tim Lafleur
+
