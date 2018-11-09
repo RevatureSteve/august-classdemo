@@ -1,4 +1,4 @@
-package com.flashcards.classdemo.Entity;
+package com.flashcards.classdemo.entity;
 
 import javax.persistence.*;
 import java.util.Objects;

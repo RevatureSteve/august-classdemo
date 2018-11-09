@@ -1,7 +1,8 @@
-package com.flashcards.classdemo.Controller;
+package com.flashcards.classdemo.controller;
 
-import com.flashcards.classdemo.Entity.FlashCard;
-import com.flashcards.classdemo.Service.FlashCardService;
+import com.flashcards.classdemo.entity.FlashCard;
+import com.flashcards.classdemo.service.FlashCardService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.trace.http.HttpTrace;
 import org.springframework.http.HttpStatus;
