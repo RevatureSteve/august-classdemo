@@ -17,3 +17,5 @@ This is the Spring FlashCard Restful API!
 - Hernan Guardado
 - Agustin Vasquez
 - David
+- Tim Lafleur
+
