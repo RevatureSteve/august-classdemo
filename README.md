@@ -1,1 +1,2 @@
 # august-classdemo
+Chuma Okafor
