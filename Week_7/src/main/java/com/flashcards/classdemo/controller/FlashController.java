@@ -1,22 +1,36 @@
 package com.flashcards.classdemo.controller;
 
-import com.flashcards.classdemo.entity.FlashCard;
-import com.flashcards.classdemo.service.FlashCardService;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.trace.http.HttpTrace;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+import com.flashcards.classdemo.entity.FlashCard;
+import com.flashcards.classdemo.service.FlashCardService;
 
-
+/**
+ * 
+ * @author skels
+ * @author skels2
+ *
+ */
 @RestController
 @RequestMapping("/flashcard-api")
 public class FlashController {
+	
     FlashCardService service;
 
     @Autowired
@@ -24,11 +38,13 @@ public class FlashController {
         this.service = service;
     }
 
-    /*
-     *  How are we getting the id?
+    /**
+     *  Returns a FlashCard JSON object by the param id
+     * @param id
+     * @return
      */
-    @GetMapping(value = "/flashcard", produces = "application/json")
-    public FlashCard getOneFlashCard (Integer id) {
+    @GetMapping(value = "/flashcard/{id}", produces = "application/json")
+    public FlashCard getOneFlashCard (@PathVariable Integer id) {
         return service.getFlashCard(id);
     }
 
@@ -71,9 +87,6 @@ public class FlashController {
             default:
                 return new ResponseEntity(HttpStatus.CONFLICT);
         }
-//        return new ResponseEntity(HttpStatus.NO_CONTENT);
-
-        //TODO ask about returning saved objects. Restfull??
     }
 
     @PostMapping(value = "/flashcard", consumes = "application/json")
