@@ -1,4 +1,3 @@
 # august-classdemo
-This is the Spring FlashCard Restful API
-
-James Jeffries
+This is the Spring FlashCard Restful API!
+Joshua Howard
