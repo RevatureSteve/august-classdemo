@@ -1,13 +1,17 @@
 package com.flashcards.classdemo.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
+
+import com.revature.pojo.Person;
 
 @Aspect
 @Component
-public class GeekAspect {
+public class FlashCardAspect {
 	/*
 	 *  AOP - Not specific to Spring, spring just uses it too
 	 *  
@@ -66,22 +70,5 @@ public class GeekAspect {
 //		sout method name and argument
 //		
 //	}
-	@Around("execution(* com.flashcards.classdemo.service.GeekService.*(..))")
-	public void testAroundServiceAdvice(ProceedingJoinPoint pjp) throws Throwable{
-		System.out.println(pjp.getSignature().getName());
-		for (Object e:pjp.getArgs()){
-			System.out.println(e);
-		}
-		pjp.proceed();
-	}
-
-	@Around("execution(* com.flashcards.classdemo.controller.GeekController.*(..))")
-	public void testAroundControllerAdvice(ProceedingJoinPoint pjp) throws Throwable{
-		System.out.println(pjp.getSignature().getName());
-		for (Object e:pjp.getArgs()){
-			System.out.println(e);
-		}
-		pjp.proceed();
-	}
 
 }
