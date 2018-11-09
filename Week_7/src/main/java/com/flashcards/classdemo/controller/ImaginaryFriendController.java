@@ -26,16 +26,30 @@ public class ImaginaryFriendController {
     @Autowired
     ImaginaryFriendService service;
 
+    /**
+     * Grabs one imaginary friend by Integer Id.
+     * @param id
+     * @return
+     */
     @GetMapping(value = "/friend/{id}", produces = "application/json")
     public ImaginaryFriend getOneFriend (@PathVariable Integer id) {
         return service.getFriend(id);
     }
 
+    /**
+     * Returns a list of Imaginary Friends.
+     * @return
+     */
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<ImaginaryFriend> getAllFriends(){
         return service.getAllFriends();
     }
 
+    /**
+     * Deletes one Imaginary friend by an Integer Id.
+     * @param id
+     * @return
+     */
     @DeleteMapping(value = "/friend/{id}")
     public ResponseEntity deleteFriend(@PathVariable Integer id){
         if (service.deleteFriend(id)){
@@ -47,6 +61,12 @@ public class ImaginaryFriendController {
 
     }
 
+    /**
+     * Updates an imaginary friend
+     * @param id
+     * @param fc
+     * @return
+     */
     @PutMapping("/friend/{id}")
     public ResponseEntity updateFriends (@PathVariable Integer id, @RequestBody ImaginaryFriend fc){
         fc.setId(id);
@@ -57,7 +77,6 @@ public class ImaginaryFriendController {
     @PostMapping(value = "/friend", consumes = "application/json")
     public ResponseEntity addFriends(@RequestBody ImaginaryFriend fc, HttpServletResponse resp) {
         service.createFriends(fc);
-        resp.setHeader("Location", "http://localhost:8080/friend" + fc.getId());
         return new ResponseEntity(HttpStatus.CREATED);
     }
 }
