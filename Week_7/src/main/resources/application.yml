@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: afgomez864
+    password: Bandit10
+    url: jdbc:postgresql://class-1809-gomez.ccuog4aactcv.us-east-1.rds.amazonaws.com:5432/webdb
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: update
