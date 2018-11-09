@@ -7,11 +7,12 @@ Kevin Zaldivar
 Jose Contreras
 Felipe Gomez
 Jutin Smith
-JonBonin
+Jon Bonin
 Nathaniel Moss
 Brian Alvarez
 JonBonin
 Chuma Okafor
 Hernan Guardado
+Agustin Vasquez
 
 
