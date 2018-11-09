@@ -20,13 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.flashcards.classdemo.entity.FlashCard;
-import com.flashcards.classdemo.service.FlashCardService;
 
 /**
  *
- * @author skels
- * @author skels2
+ * @author not skels
+ * @author not skels2
  *
  */
 @RestController
@@ -41,7 +39,7 @@ public class DeckController {
     }
 
     /**
-     *  Returns a FlashCard JSON object by the param id
+     *  Returns a Deck JSON object by the param id
      * @param id
      * @return
      */
@@ -71,12 +69,10 @@ public class DeckController {
 
     }
 
-    @PutMapping("/flashcard/{id}")
-    public ResponseEntity updateFlashCard (@PathVariable Integer id, @RequestBody Deck d){
-        //service.updateFlashCard(fc);
+    @PutMapping("/deck/{id}")
+    public ResponseEntity updateDeck (@PathVariable Integer id, @RequestBody Deck d){
         d.setId(id);
-//        next line is optional instead of switch statement
-//        return new ResponseEntity(HttpStatus.valueOf(service.updateFlashCard(fc)));
+
         switch (service.updateDeck(d)){
             case 204:
                 return new ResponseEntity(HttpStatus.NO_CONTENT);
@@ -94,7 +90,7 @@ public class DeckController {
     @PostMapping(value = "/deck", consumes = "application/json")
     public ResponseEntity addDeck(@RequestBody Deck d, HttpServletResponse resp) {
         service.createDeck(d);
-        resp.setHeader("Location", "http://localhost:8080/flashcard" + d.getId());
+        resp.setHeader("Location", "http://localhost:8080/dev" + d.getId());
         return new ResponseEntity(HttpStatus.CREATED);
     }
 }
