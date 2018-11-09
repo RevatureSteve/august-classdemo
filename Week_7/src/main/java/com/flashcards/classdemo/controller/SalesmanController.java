@@ -44,6 +44,7 @@ public class SalesmanController
     @PostMapping(value = "/salesman", consumes = "application/json")
     public ResponseEntity addSalesman(@RequestBody Salesman s){
         service.createSalesman(s);
+        System.out.println("checking " +s.getFirstName());
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
