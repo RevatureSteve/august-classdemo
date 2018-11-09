@@ -11,7 +11,7 @@ import com.revature.pojo.Person;
 
 @Aspect
 @Component
-public class FlashCardAspect {
+public class GeekAspect {
 	/*
 	 *  AOP - Not specific to Spring, spring just uses it too
 	 *  
@@ -66,8 +66,26 @@ public class FlashCardAspect {
 //		pjp.proceed();
 //		
 //		System.out.println("clean up rides");
-//		
+//		interceot controllers
+//		sout method name and argument
 //		
 //	}
-	
+	@Around("execution(* com.flashcards.classdemo.service.GeekService.*(..))")
+	public void testAroundServiceAdvice(ProceedingJoinPoint pjp) throws Throwable{
+		System.out.println(pjp.getSignature().getName());
+		for (Object e:pjp.getArgs()){
+			System.out.println(e);
+		}
+		pjp.proceed();
+	}
+
+	@Around("execution(* com.flashcards.classdemo.controller.GeekController.*(..))")
+	public void testAroundControllerAdvice(ProceedingJoinPoint pjp) throws Throwable{
+		System.out.println(pjp.getSignature().getName());
+		for (Object e:pjp.getArgs()){
+			System.out.println(e);
+		}
+		pjp.proceed();
+	}
+
 }
