@@ -1,7 +1,8 @@
-package com.flashcards.classdemo.Service;
+package com.flashcards.classdemo.service;
 
-import com.flashcards.classdemo.Dao.FlashCardDao;
-import com.flashcards.classdemo.Entity.FlashCard;
+import com.flashcards.classdemo.dao.FlashCardDao;
+import com.flashcards.classdemo.entity.FlashCard;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
