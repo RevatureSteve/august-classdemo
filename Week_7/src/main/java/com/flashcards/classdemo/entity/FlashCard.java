@@ -15,6 +15,9 @@ public class FlashCard {
 
     private String answer;
 
+    @Column(name = "DECK_ID")
+    private int deckId;
+
     public FlashCard() {
     }
 
@@ -45,6 +48,14 @@ public class FlashCard {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public int getDeckId() {
+        return deckId;
+    }
+
+    public void setDeckId(int deckId) {
+        this.deckId = deckId;
     }
 
     @Override
